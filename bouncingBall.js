@@ -28,16 +28,15 @@ Examples:
 (Condition 2) not fulfilled).
 */
 
-function bouncingBall(h,  bounce,  window) {
-  if ((h <= 0) || (h <= window) || (bounce >=1 ) || (bounce <= 0)) { return -1 }
+function bouncingBall(h, bounce, window) {
+  let counter = -1
 
-  if (window <= 0 ) { return -1 } // "To Infinity... and Beyond!" ;)))
-
-  let counter = -1;
-
-  while (h > window) {
-    counter += 2
-    h = h * bounce;
+  if (h > 0 || h > window || window > 0 || bounce < 1 || bounce > 0) {
+    while (h > window) {
+      counter += 2
+      h = h * bounce
+    }
   }
+
   return counter
 }
